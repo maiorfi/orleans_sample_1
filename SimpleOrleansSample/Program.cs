@@ -47,8 +47,8 @@ namespace Orleans2GettingStarted
                     {
                         int grainId = random.Next(0, 500);
                         double temperature = random.NextDouble() * 40;
-                        var sensor = client.GetGrain<ITemperatureSensorGrain>(grainId);
-                        await sensor.SubmitTemperatureAsync((float)temperature);
+                        var sensor = client.GetGrain<IScalarSensorGrain>(grainId);
+                        await sensor.SubmitDataAsync(temperature);
                     }
                 }
             }

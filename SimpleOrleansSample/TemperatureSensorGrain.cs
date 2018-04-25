@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Orleans2GettingStarted
 {
-    public class TemperatureSensorGrain : Grain, ITemperatureSensorGrain
+    public class TemperatureSensorGrain : Grain, IScalarSensorGrain
     {
-        public Task SubmitTemperatureAsync(float temperature)
+        public Task SubmitDataAsync(double temperature)
         {
             long grainId = this.GetPrimaryKeyLong();
             Console.WriteLine($"{grainId} received temperature: {temperature}");

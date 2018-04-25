@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Orleans2GettingStarted
 {
-    public interface ITemperatureSensorGrain : IGrainWithIntegerKey
+    public interface IScalarSensorGrain : IGrainWithIntegerKey
     {
-        Task SubmitTemperatureAsync(float temperature);
+        Task SubmitDataAsync(double temperature);
     }
 }
