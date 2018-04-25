@@ -8,6 +8,6 @@ namespace Orleans2GettingStarted
 {
     public interface IScalarSensorGrain : IGrainWithIntegerKey
     {
-        Task SubmitDataAsync(double temperature);
+        Task SubmitDataAsync(DateTime timeStamp, double data);
     }
 }

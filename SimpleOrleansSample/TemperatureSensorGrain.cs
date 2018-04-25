@@ -8,10 +8,10 @@ namespace Orleans2GettingStarted
 {
     public class TemperatureSensorGrain : Grain, IScalarSensorGrain
     {
-        public Task SubmitDataAsync(double temperature)
+        public Task SubmitDataAsync(DateTime timeStamp, double temperature)
         {
             long grainId = this.GetPrimaryKeyLong();
-            Console.WriteLine($"{grainId} received temperature: {temperature}");
+            Console.WriteLine($"{grainId} received temperature: {temperature} at {timeStamp}");
 
             return Task.CompletedTask;
         }
